@@ -13,6 +13,7 @@ on:
 env:
     PROJ_USERNAME: MegaPiggy
     PROJ_NAME: LineNumbers
+    PROJ_NAME2: Patcher
 
 jobs:
     pre_job:
@@ -62,8 +63,14 @@ jobs:
             - name: Remove .csproj.user
               run: if (Test-Path ${{ env.PROJ_NAME }}/${{ env.PROJ_NAME }}.csproj.user) { rm ${{ env.PROJ_NAME }}/${{ env.PROJ_NAME }}.csproj.user }
 
+            - name: Remove .csproj.user
+              run: if (Test-Path ${{ env.PROJ_NAME2 }}/${{ env.PROJ_NAME2 }}.csproj.user) { rm ${{ env.PROJ_NAME2 }}/${{ env.PROJ_NAME2 }}.csproj.user }
+
             - name: Build Mod
               run: dotnet build -c Release
+
+            - name: Move patcher
+              run: xcopy /e/q/y/i ".\${{ env.PROJ_NAME2 }}\bin\Release" ".\${{ env.PROJ_NAME }}\bin\Release"
 
             - name: Upload Artifact
               uses: "actions/upload-artifact@v3"
