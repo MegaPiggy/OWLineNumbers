@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+	<OutputType>Exe</OutputType>
+	<TargetFramework>net48</TargetFramework>
+	<LangVersion>latest</LangVersion>
+    <Copyright>Copyright © </Copyright>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+	<NoWarn>MSB3270</NoWarn>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Update="mono-2.0-bdwgc.dll">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+	<Content Include="Patcher.csproj.user" />
+  </ItemGroup>
+</Project>

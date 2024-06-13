@@ -1,0 +1,11 @@
+{
+	"$schema": "https://raw.githubusercontent.com/ow-mods/owml/master/schemas/manifest_schema.json",
+	"filename": "LineNumbers.dll",
+	"author": "MegaPiggy",
+	"name": "Line Numbers",
+	"uniqueName": "MegaPiggy.LineNumbers",
+	"version": "1.0.0",
+	"owmlVersion": "2.13.0",
+	"patcher": "Patcher.exe",
+	"dependencies": []
+}
